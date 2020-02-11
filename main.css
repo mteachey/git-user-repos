@@ -17,6 +17,12 @@ h1{
     font-size:1.5rem;
 }
 
+h2 {
+    text-align: center;
+}
+
+
+
 #git-user-form {
     display: flex;
     flex-direction: column;
@@ -49,6 +55,22 @@ button {
     border-radius: 10px;
     padding: 6px 10px;
     width:150px;
+}
+
+.results {
+    max-width: 500px;
+    margin: auto;
+    text-align: left;
+}
+
+.results-list {
+    list-style-type: none;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+}
+
+.result {
+    margin-bottom: 2em;
 }
 
 .js-hidden{
