@@ -73,6 +73,10 @@ button {
     margin-bottom: 2em;
 }
 
+.result a{
+    color:blue;
+}
+
 .js-hidden{
     display:none;
 }
