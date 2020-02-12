@@ -1,3 +1,4 @@
+'use strict';
 //listen for form submit (return or button click)
 //get the entered user name from the form submit (enter or button click)
 //Call the getRepos function which will
@@ -29,7 +30,11 @@ function getRepos(userName){
 // this function will be responsible for making the GET request to the GitAPI
 const url = `https://api.github.com/users/${userName}/repos`;
    fetch(url)
-        .then(response => response.json())
+        .then(response =>{
+            if(response.ok){
+            return response.json();}
+            throw new Error(reponse.statusText);         
+        })
         .then(responseJSON => {
             displayResults(responseJSON, userName);
             //console.log(responseJSON);       
@@ -37,7 +42,6 @@ const url = `https://api.github.com/users/${userName}/repos`;
         .catch(error => alert('Something went wrong, please try again'));    
     console.log(`getRepos ran`); 
 }
-
 
 function displayResults(results, userName){
 // this function will display the results of the request (names and titles) in the DOM
